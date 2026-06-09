@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Are PWAs? | Progressive Web Apps</title>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Site header -->
+    <header id="site-header">
+        <div id="header-inner">
+            <div>
+                <div id="site-title">Progressive Web Applications</div>
+                <div id="site-subtitle">IT 3203 Web Development &mdash; Research Project</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation - active class marks current page -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html" class="active">What Are PWAs?</a></li>
+            <li><a href="topic2.html">Core Technologies</a></li>
+            <li><a href="key-concepts.html">Key Concepts</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main id="page-wrapper">
+
+        <!-- Page title banner -->
+        <div class="page-banner">
+            <h1>What Are Progressive Web Applications?</h1>
+            <p>A look at where PWAs came from, what they are, and why they matter</p>
+        </div>
+
+        <!-- Section 1: Definition -->
+        <div class="card">
+            <h2>Definition and Background</h2>
+
+            <!-- Image showing PWA concept -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Progressive_Web_Apps_Logo.svg/480px-Progressive_Web_Apps_Logo.svg.png"
+                 alt="Progressive Web App official logo"
+                 style="width:180px; float:right; margin:0 0 16px 24px;">
+
+            <p>
+                A Progressive Web Application is a type of web application that uses modern web capabilities
+                to deliver a user experience similar to a native app. The term was coined by Google engineers
+                Alex Russell and Frances Berriman in 2015, when they described a set of principles that
+                any web app could adopt to become more capable and reliable.
+            </p>
+            <p>
+                The word "progressive" is intentional. It means the app works for every user regardless of
+                browser or device, but takes advantage of additional features when they are available.
+                On a modern browser with a good connection the experience is fast and full-featured. On an
+                older browser or slow connection, it still works — just with fewer capabilities. This is
+                called progressive enhancement.
+            </p>
+            <p>
+                Before PWAs, web developers had two options: build a website that works everywhere but
+                feels limited on mobile, or build a native app that works great but requires app stores,
+                separate codebases for iOS and Android, and asking users to download something before
+                they can even try it. PWAs offer a third path.
+            </p>
+
+            <!-- Clear the float after the image -->
+            <div style="clear:both;"></div>
+        </div>
+
+        <!-- Section 2: Three characteristics -->
+        <div class="card">
+            <h2>Three Core Characteristics</h2>
+            <div class="two-col">
+                <div>
+                    <h3>Reliable</h3>
+                    <p>
+                        A PWA loads instantly even under poor network conditions or when there is no
+                        connection at all. This is made possible by service workers, which intercept
+                        network requests and serve cached content when the network is unavailable.
+                    </p>
+                </div>
+                <div>
+                    <h3>Fast</h3>
+                    <p>
+                        PWAs respond quickly to user interactions with smooth animations and fast load
+                        times. Google research found that 53% of mobile users abandon a site that takes
+                        more than three seconds to load. PWAs address this with pre-caching and app shell
+                        architecture.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h3>Engaging</h3>
+                <p>
+                    PWAs can be installed to a device's home screen without an app store. Once installed,
+                    they can send push notifications, run in fullscreen, and behave just like a native app
+                    from the user's perspective.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Comparison to native -->
+        <div class="card">
+            <h2>How PWAs Compare to Native Apps</h2>
+            <p>
+                For most web applications — news sites, e-commerce, social media, productivity tools —
+                a PWA can match or exceed the native app experience while costing significantly less to
+                build and maintain. One codebase works across all platforms instead of maintaining
+                separate iOS and Android apps.
+            </p>
+            <p>
+                Pinterest rebuilt its mobile web experience as a PWA and saw a 60% increase in core
+                engagements and a 44% increase in user-generated ad revenue compared to their previous
+                mobile web experience (Google Developers, 2017).
+            </p>
+
+            <!-- List of companies using PWAs -->
+            <h3>Companies That Use PWAs</h3>
+            <ul>
+                <li><strong>Twitter Lite</strong> &mdash; reduced data usage by 70%, increased tweets sent by 75%</li>
+                <li><strong>Pinterest</strong> &mdash; 60% increase in core engagements after PWA rebuild</li>
+                <li><strong>Starbucks</strong> &mdash; PWA is 99.84% smaller than their iOS app</li>
+                <li><strong>Uber</strong> &mdash; PWA loads in under 3 seconds on 2G networks</li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Browser support -->
+        <div class="card">
+            <h2>Browser Support</h2>
+            <p>
+                PWA support has expanded significantly since 2015. Chrome, Edge, Firefox, and Safari
+                all support core PWA features to varying degrees.
+            </p>
+
+            <!-- Browser support table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Service Workers</th>
+                        <th>Install Prompt</th>
+                        <th>Push Notifications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>Yes</td>
+                        <td>Limited</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td>Yes</td>
+                        <td>iOS only</td>
+                        <td>2023+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
+    </footer>
+
+</body>
+</html>

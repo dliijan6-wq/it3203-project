@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web Apps | IT 3203 Project</title>
+    <!-- Single external stylesheet for all pages -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Site header with gradient background -->
+    <header id="site-header">
+        <div id="header-inner">
+            <div>
+                <div id="site-title">Progressive Web Applications</div>
+                <div id="site-subtitle">IT 3203 Web Development &mdash; Research Project</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main navigation - consistent across all pages -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="topic1.html">What Are PWAs?</a></li>
+            <li><a href="topic2.html">Core Technologies</a></li>
+            <li><a href="key-concepts.html">Key Concepts</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page content -->
+    <main id="page-wrapper">
+
+        <!-- Hero intro section -->
+        <section class="hero">
+            <h1>Progressive Web Applications</h1>
+            <p>
+                Progressive Web Applications (PWAs) are a modern approach to building web experiences
+                that behave like native mobile apps. They are fast, reliable, and installable
+                without requiring an app store. This site explores what PWAs are, how they work,
+                and why they matter for the future of the web.
+            </p>
+        </section>
+
+        <!-- Hero image representing the topic -->
+        <img src="https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1B2ABe2x9RNlKiKEbZqB.png"
+             alt="Diagram showing PWA features including reliable, fast, and engaging"
+             style="width:100%; max-height:280px; object-fit:cover; border-radius:6px; margin-bottom:24px;">
+
+        <!-- Project abstract -->
+        <div class="card">
+            <h2>Abstract</h2>
+            <p>
+                The web has come a long way from static HTML pages. Progressive Web Applications represent
+                a shift in how developers think about delivering software — using open web standards to
+                build experiences that close the gap between web and native applications. PWAs can load
+                instantly, work offline, send push notifications, and be installed on a user's device,
+                all without going through an app store. This project examines the architecture behind PWAs,
+                the technologies that make them work, and why major companies like Twitter, Starbucks,
+                and Pinterest have moved toward the PWA model.
+            </p>
+        </div>
+
+        <!-- Key terms grid -->
+        <div class="card">
+            <h2>Key Terms</h2>
+            <!-- 9 key terms displayed in a 3-column grid -->
+            <div class="terms-grid">
+                <div class="term-chip">Service Worker</div>
+                <div class="term-chip">Web App Manifest</div>
+                <div class="term-chip">Cache API</div>
+                <div class="term-chip">HTTPS</div>
+                <div class="term-chip">Offline-First</div>
+                <div class="term-chip">Push Notifications</div>
+                <div class="term-chip">App Shell</div>
+                <div class="term-chip">IndexedDB</div>
+                <div class="term-chip">Progressive Enhancement</div>
+            </div>
+        </div>
+
+        <!-- Table of contents linking to all pages -->
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="topic1.html">What Are Progressive Web Applications?</a> &mdash; Introduction, history, and how PWAs compare to native apps</li>
+                <li><a href="topic2.html">Core Technologies Behind PWAs</a> &mdash; Service workers, manifests, and the Cache API</li>
+                <li><a href="key-concepts.html">Key Concepts</a> &mdash; Definitions of the essential ideas behind PWA development</li>
+                <li><a href="references.html">References &amp; Resources</a> &mdash; Sources and further reading</li>
+                <li><a href="about.html">About</a> &mdash; About the author and this project</li>
+            </ol>
+        </div>
+
+        <!-- Comparison table: PWA vs Web vs Native -->
+        <div class="card">
+            <h2>PWA vs Traditional Web vs Native App</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Traditional Website</th>
+                        <th>Progressive Web App</th>
+                        <th>Native App</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Works Offline</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Installable</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>App Store Required</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Push Notifications</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Auto Updates</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Often Manual</td>
+                    </tr>
+                    <tr>
+                        <td>Cross-Platform</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>No (usually)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer with class project note and link -->
+    <footer id="site-footer">
+        <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
+    </footer>
+
+</body>
+</html>

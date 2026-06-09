@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Concepts | Progressive Web Apps</title>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Site header -->
+    <header id="site-header">
+        <div id="header-inner">
+            <div>
+                <div id="site-title">Progressive Web Applications</div>
+                <div id="site-subtitle">IT 3203 Web Development &mdash; Research Project</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">What Are PWAs?</a></li>
+            <li><a href="topic2.html">Core Technologies</a></li>
+            <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main id="page-wrapper">
+
+        <!-- Page banner -->
+        <div class="page-banner">
+            <h1>Key Concepts</h1>
+            <p>Definitions and explanations of the essential ideas behind PWA development</p>
+        </div>
+
+        <!-- 7 concept cards in a 2-column grid -->
+        <div class="concept-grid">
+
+            <!-- Concept 1 -->
+            <div class="concept-card">
+                <h3>Service Worker</h3>
+                <p>
+                    A JavaScript file that runs in the background separate from the main browser
+                    thread. It acts as a network proxy, intercepting requests, managing caches,
+                    and enabling offline functionality. Service workers are the core technology
+                    that makes PWAs reliable without a network connection.
+                </p>
+            </div>
+
+            <!-- Concept 2 -->
+            <div class="concept-card">
+                <h3>Web App Manifest</h3>
+                <p>
+                    A JSON file that defines how a web application appears when installed on a
+                    device. It sets the app's name, icons, theme color, start URL, and display
+                    mode. Without a manifest a browser cannot present the web app as an
+                    installable standalone experience.
+                </p>
+            </div>
+
+            <!-- Concept 3 -->
+            <div class="concept-card">
+                <h3>Cache API</h3>
+                <p>
+                    A browser storage mechanism that service workers use to store and retrieve
+                    network responses. Unlike standard browser caching, the Cache API gives
+                    developers full programmatic control over what gets stored and how it gets
+                    served back to the user. It is the backbone of offline support in PWAs.
+                </p>
+            </div>
+
+            <!-- Concept 4 -->
+            <div class="concept-card">
+                <h3>App Shell Architecture</h3>
+                <p>
+                    A design pattern where the minimal HTML, CSS, and JavaScript needed to
+                    display the application's interface is cached offline. The shell loads
+                    instantly from cache while dynamic content loads from the network when
+                    available. This gives the impression of an instant launch even on slow connections.
+                </p>
+            </div>
+
+            <!-- Concept 5 -->
+            <div class="concept-card">
+                <h3>Progressive Enhancement</h3>
+                <p>
+                    The design philosophy that a web app should work for every user at a baseline
+                    level, then progressively add better functionality for users with more capable
+                    browsers. A PWA built on this principle works on old browsers but delivers
+                    richer features to users whose browsers support them.
+                </p>
+            </div>
+
+            <!-- Concept 6 -->
+            <div class="concept-card">
+                <h3>Push Notifications</h3>
+                <p>
+                    A feature that allows installed PWAs to send notifications to a user's device
+                    even when the app is not open. This requires the user's permission and is
+                    handled through the Push API and Notifications API. Push notifications are
+                    one of the most impactful PWA features for re-engagement.
+                </p>
+            </div>
+
+            <!-- Concept 7 - spans full width -->
+            <div class="concept-card" style="grid-column: 1 / -1;">
+                <h3>IndexedDB</h3>
+                <p>
+                    A low-level browser API for storing large amounts of structured data on the
+                    client side. PWAs use IndexedDB to store data that needs to persist across
+                    sessions and be available offline — like user preferences or data that needs
+                    to sync back to a server when the connection is restored. It is more powerful
+                    than localStorage but more complex to work with.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Summary card -->
+        <div class="card">
+            <h2>How These Concepts Work Together</h2>
+            <p>
+                A fully featured PWA uses all of these concepts in combination. The
+                <strong>web app manifest</strong> handles installation. The
+                <strong>service worker</strong> handles network interception and offline caching
+                using the <strong>Cache API</strong>. The <strong>app shell architecture</strong>
+                ensures fast first paint. <strong>IndexedDB</strong> handles persistent local
+                data storage. And <strong>push notifications</strong> handle re-engagement.
+                The underlying design philosophy — <strong>progressive enhancement</strong> — ties
+                it together by making sure the app still works when any one capability is unavailable.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
+    </footer>
+
+</body>
+</html>

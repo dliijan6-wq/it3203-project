@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Technologies | Progressive Web Apps</title>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Site header -->
+    <header id="site-header">
+        <div id="header-inner">
+            <div>
+                <div id="site-title">Progressive Web Applications</div>
+                <div id="site-subtitle">IT 3203 Web Development &mdash; Research Project</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">What Are PWAs?</a></li>
+            <li><a href="topic2.html" class="active">Core Technologies</a></li>
+            <li><a href="key-concepts.html">Key Concepts</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main id="page-wrapper">
+
+        <!-- Page title banner -->
+        <div class="page-banner">
+            <h1>Core Technologies Behind PWAs</h1>
+            <p>The building blocks that make progressive web apps work</p>
+        </div>
+
+        <!-- Service Worker section -->
+        <div class="card">
+            <h2>Service Workers</h2>
+
+            <!-- intentionally missing alt attribute - subtle error -->
+            <img src="https://web-dev.imgix.net/image/admin/wl8pBNFzfK3mXJ5ZKPWL.png"
+                 style="width:100%; max-height:220px; object-fit:contain; background:#f0f4f7; padding:12px; border-radius:4px;">
+            <p class="img-caption">Service worker lifecycle: registration, installation, and activation</p>
+
+            <p>
+                The service worker is the most important piece of the PWA puzzle. It is a JavaScript
+                file that runs in the background separate from the main browser thread, acting as a
+                programmable network proxy. It can intercept every network request the app makes and
+                decide what to do with it — fetch from the network, return a cached version, or both.
+            </p>
+            <p>
+                Service workers have a lifecycle with three main stages: registration, installation,
+                and activation. During installation the service worker caches files it needs offline.
+                During activation it takes control of pages under its scope. Once active it intercepts
+                fetch events and applies the caching strategy the developer defined.
+            </p>
+
+            <!-- Key requirements for service workers -->
+            <h3>Requirements</h3>
+            <ul>
+                <li>Must be served over <strong>HTTPS</strong> (localhost is an exception for development)</li>
+                <li>Runs on a separate thread from the main page — cannot access the DOM directly</li>
+                <li>Has its own lifecycle independent of the web page</li>
+                <li>Scope is limited to the directory it is registered from</li>
+            </ul>
+        </div>
+
+        <!-- Web App Manifest section -->
+        <div class="card">
+            <h2>Web App Manifest</h2>
+            <p>
+                The web app manifest is a JSON file that tells the browser how to display the application
+                when installed on a device. It defines the app's name, icons, theme colors, start URL,
+                and display mode. Without a manifest the browser cannot present the app as a standalone
+                installable experience.
+            </p>
+
+            <!-- Manifest properties table -->
+            <h3>Key Manifest Properties</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Purpose</th>
+                        <th>Example Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>Full app name shown on install prompt</td>
+                        <td>"My PWA App"</td>
+                    </tr>
+                    <tr>
+                        <td>short_name</td>
+                        <td>Name shown under home screen icon</td>
+                        <td>"MyPWA"</td>
+                    </tr>
+                    <tr>
+                        <td>start_url</td>
+                        <td>Page to open when app is launched</td>
+                        <td>"/index.html"</td>
+                    </tr>
+                    <tr>
+                        <td>display</td>
+                        <td>How the app is presented</td>
+                        <td>"standalone"</td>
+                    </tr>
+                    <tr>
+                        <td>theme_color</td>
+                        <td>Color of the browser toolbar</td>
+                        <td>"#1b3a4b"</td>
+                    </tr>
+                    <tr>
+                        <td>icons</td>
+                        <td>App icons for home screen</td>
+                        <td>Array of image objects</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- HTTPS and security -->
+        <div class="card">
+            <h2>HTTPS Requirement</h2>
+            <p>
+                Service workers can only run on pages served over HTTPS. This is a security requirement,
+                not just a recommendation. Because service workers can intercept and modify network
+                requests, running them over HTTP would allow a man-in-the-middle attacker to inject
+                a malicious service worker that intercepts all network traffic.
+            </p>
+            <p>
+                Free SSL certificates are available through Let's Encrypt, which has made HTTPS
+                adoption much easier. GitHub Pages, which this project is hosted on, serves over
+                HTTPS by default.
+            </p>
+        </div>
+
+        <!-- Caching strategies section -->
+        <div class="card">
+            <h2>Caching Strategies</h2>
+            <p>
+                One of the most important decisions in PWA development is choosing a caching strategy.
+                Different types of content need different approaches depending on how often they update
+                and how critical it is that the user sees the latest version.
+            </p>
+
+            <!-- Caching strategies table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>How It Works</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cache First</td>
+                        <td>Serve from cache, fall back to network if not cached</td>
+                        <td>Static assets: CSS, JS, images</td>
+                    </tr>
+                    <tr>
+                        <td>Network First</td>
+                        <td>Try network first, fall back to cache if offline</td>
+                        <td>Frequently updated content</td>
+                    </tr>
+                    <tr>
+                        <td>Stale While Revalidate</td>
+                        <td>Serve cache immediately, update in background</td>
+                        <td>Content where speed matters more than freshness</td>
+                    </tr>
+                    <tr>
+                        <td>Network Only</td>
+                        <td>Always fetch from network, no caching</td>
+                        <td>Real-time data like stock prices or live scores</td>
+                    </tr>
+                    <tr>
+                        <td>Cache Only</td>
+                        <td>Always serve from cache, never network</td>
+                        <td>Pre-cached offline content</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
+    </footer>
+
+</body>
+</html>
