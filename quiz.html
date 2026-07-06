@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Assessment Quiz | Progressive Web Apps</title>
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Site header -->
+    <header id="site-header">
+        <div id="header-inner">
+            <div>
+                <div id="site-title">Progressive Web Applications</div>
+                <div id="site-subtitle">IT 3203 Web Development &mdash; Research Project</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">What Are PWAs?</a></li>
+            <li><a href="topic2.html">Core Technologies</a></li>
+            <li><a href="key-concepts.html">Key Concepts</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main id="page-wrapper">
+
+        <!-- Page banner -->
+        <div class="page-banner">
+            <h1>Self Assessment Quiz</h1>
+            <p>Test what you picked up from the pages above. Five questions, instant scoring.</p>
+        </div>
+
+        <!-- Quiz form card -->
+        <div class="card">
+            <form id="quiz-form">
+
+                <!-- Question 1: fill in the blank -->
+                <div class="quiz-question" data-qnum="1" data-type="fill">
+                    <h3>Question 1</h3>
+                    <p>A <input type="text" id="q1-input" class="blank-input" autocomplete="off"> is a JavaScript file that runs separately from the main browser thread and acts as a network proxy for a PWA.</p>
+                    <div class="q-feedback" id="q1-feedback"></div>
+                </div>
+
+                <!-- Question 2: multiple choice, one correct -->
+                <div class="quiz-question" data-qnum="2" data-type="single">
+                    <h3>Question 2</h3>
+                    <p>In what year did Alex Russell and Frances Berriman coin the term Progressive Web App?</p>
+                    <label class="option-label"><input type="radio" name="q2" value="2013"> 2013</label>
+                    <label class="option-label"><input type="radio" name="q2" value="2015"> 2015</label>
+                    <label class="option-label"><input type="radio" name="q2" value="2017"> 2017</label>
+                    <label class="option-label"><input type="radio" name="q2" value="2019"> 2019</label>
+                    <div class="q-feedback" id="q2-feedback"></div>
+                </div>
+
+                <!-- Question 3: multiple choice, one correct -->
+                <div class="quiz-question" data-qnum="3" data-type="single">
+                    <h3>Question 3</h3>
+                    <p>Which file tells the browser how to display a PWA when it gets installed on a device?</p>
+                    <label class="option-label"><input type="radio" name="q3" value="manifest"> web app manifest</label>
+                    <label class="option-label"><input type="radio" name="q3" value="package"> package.json</label>
+                    <label class="option-label"><input type="radio" name="q3" value="sw"> service-worker.js</label>
+                    <label class="option-label"><input type="radio" name="q3" value="robots"> robots.txt</label>
+                    <div class="q-feedback" id="q3-feedback"></div>
+                </div>
+
+                <!-- Question 4: multiple choice, one correct -->
+                <div class="quiz-question" data-qnum="4" data-type="single">
+                    <h3>Question 4</h3>
+                    <p>Which caching strategy always serves from cache and never touches the network?</p>
+                    <label class="option-label"><input type="radio" name="q4" value="networkfirst"> network first</label>
+                    <label class="option-label"><input type="radio" name="q4" value="cachefirst"> cache first</label>
+                    <label class="option-label"><input type="radio" name="q4" value="cacheonly"> cache only</label>
+                    <label class="option-label"><input type="radio" name="q4" value="swr"> stale while revalidate</label>
+                    <div class="q-feedback" id="q4-feedback"></div>
+                </div>
+
+                <!-- Question 5: multi select, more than one correct -->
+                <div class="quiz-question" data-qnum="5" data-type="multi">
+                    <h3>Question 5</h3>
+                    <p>Which of the following are true requirements for a service worker? Select all that apply.</p>
+                    <label class="option-label"><input type="checkbox" name="q5" value="https"> must be served over https</label>
+                    <label class="option-label"><input type="checkbox" name="q5" value="thread"> runs on a separate thread from the main page</label>
+                    <label class="option-label"><input type="checkbox" name="q5" value="paidssl"> requires a paid ssl certificate</label>
+                    <label class="option-label"><input type="checkbox" name="q5" value="lifecycle"> has its own lifecycle independent of the page</label>
+                    <div class="q-feedback" id="q5-feedback"></div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="quiz-buttons">
+                    <button type="submit" id="submit-btn">Submit Quiz</button>
+                    <button type="button" id="reset-btn">Retake Quiz</button>
+                </div>
+            </form>
+
+            <!-- Results summary, hidden until submit -->
+            <div id="results-summary" class="results-summary hidden">
+                <h2 id="results-heading">Result</h2>
+                <p id="results-score"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
+    </footer>
+
+    <!-- Quiz logic, separate file -->
+    <script src="quiz.js"></script>
+
+</body>
+</html>
