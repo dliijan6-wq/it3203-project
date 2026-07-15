@@ -20,7 +20,9 @@
     </header>
 
     <!-- Navigation -->
+    <!-- Hamburger button, only visible on small screens via media query, toggles the nav list -->
     <nav id="main-nav">
+        <button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="topic1.html">What Are PWAs?</a></li>
@@ -117,6 +119,8 @@
     </footer>
 
     <!-- Quiz logic, separate file -->
+    <!-- nav.js runs the mobile hamburger menu toggle -->
+    <script src="nav.js"></script>
     <script src="quiz.js"></script>
 
 </body>

@@ -1,7 +1,10 @@
 /* =============================================
-   IT 3203 Project Milestone 1
+   IT 3203 Project Milestone 3
    Topic: Progressive Web Applications
    Author: Derek Lawson
+   this file now includes responsive and mobile
+   web design rules at the bottom, see the media
+   query section for milestone 3 specific changes
    ============================================= */
 
 /* === RESET & BASE STYLES === */
@@ -123,6 +126,19 @@ img {
 #main-nav {
     background-color: #14303f;
     border-bottom: 3px solid #2a9d8f;
+    position: relative;
+}
+
+/* hamburger button for mobile nav, hidden on desktop by default */
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    padding: 10px 30px;
+    cursor: pointer;
+    line-height: 1;
 }
 
 #main-nav ul {
@@ -511,4 +527,155 @@ img {
 
 .fail-heading {
     color: #b3261e;
+}
+
+/* =============================================
+   MILESTONE 3 - RESPONSIVE AND MOBILE WEB DESIGN
+   two breakpoints below cover tablet width and
+   phone width, following a mobile first mindset
+   of stacking content once space gets tight
+   ============================================= */
+
+/* wrap every table so it can scroll sideways instead of
+   breaking the page layout on narrow screens */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+    margin-bottom: 0;
+}
+
+/* === BREAKPOINT 1: TABLET, screens 768px and under === */
+@media (max-width: 768px) {
+
+    /* header stacks and centers instead of the two column grid */
+    #header-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 16px 20px;
+    }
+
+    /* show the hamburger button and hide the horizontal link list */
+    #nav-toggle {
+        display: block;
+    }
+
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* nav-open is toggled on by nav.js when the hamburger is tapped */
+    #main-nav ul.nav-open {
+        display: flex;
+    }
+
+    #main-nav ul li a {
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* tighten up the main content padding for smaller viewports */
+    #page-wrapper {
+        padding: 24px 18px;
+    }
+
+    /* two column layouts collapse to a single column */
+    .two-col,
+    .concept-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* key terms grid goes from 3 columns to 2 */
+    .terms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* profile box no longer needs to be narrow once it is stacked on top */
+    .profile-box {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    /* floated image on topic1 should not float on a narrower layout */
+    .card img[style*="float:right"] {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 0 16px 0 !important;
+    }
+}
+
+/* === BREAKPOINT 2: PHONE, screens 480px and under === */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+
+    #site-title {
+        font-size: 1.1rem;
+    }
+
+    #site-subtitle {
+        font-size: 0.78rem;
+    }
+
+    #page-wrapper {
+        padding: 18px 14px;
+    }
+
+    .page-banner {
+        padding: 18px 20px;
+    }
+
+    /* single column for key terms on the smallest screens */
+    .terms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px 16px;
+    }
+
+    /* shrink table text so more columns fit before scrolling kicks in */
+    th, td {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* quiz form controls become full width and stack for easier tapping */
+    .blank-input {
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .quiz-buttons {
+        flex-direction: column;
+    }
+
+    .quiz-buttons button {
+        width: 100%;
+    }
+
+    .option-label {
+        padding: 12px 14px;
+    }
+
+    /* about page profile box goes full width on phones */
+    .profile-box {
+        max-width: 100%;
+    }
 }

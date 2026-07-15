@@ -20,7 +20,9 @@
     </header>
 
     <!-- Navigation -->
+    <!-- Hamburger button, only visible on small screens via media query, toggles the nav list -->
     <nav id="main-nav">
+        <button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="topic1.html">What Are PWAs?</a></li>
@@ -113,6 +115,9 @@
     <footer id="site-footer">
         <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank">IT 3203 &mdash; Web Development</a> at Kennesaw State University &nbsp;|&nbsp; Derek Lawson</p>
     </footer>
+
+    <!-- nav.js runs the mobile hamburger menu toggle -->
+    <script src="nav.js"></script>
 
 </body>
 </html>
